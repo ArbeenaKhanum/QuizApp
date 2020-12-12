@@ -62,4 +62,6 @@ dependencies {
     implementation "android.arch.lifecycle:viewmodel:$lifecycle_versionOne"
     // alternatively - just LiveData
     implementation "android.arch.lifecycle:livedata:$lifecycle_versionOne"
+
+    implementation "android.arch.lifecycle:compiler:$lifecycle_versionOne"
 }
