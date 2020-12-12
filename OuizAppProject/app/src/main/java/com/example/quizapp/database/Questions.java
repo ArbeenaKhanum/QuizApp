@@ -20,6 +20,7 @@ public class Questions {
     private String optionD;
     @ColumnInfo (name = "answer")
     private int answer;
+
     public Questions(String questions, String optionA, String optionB, String optionC, String optionD, int answer) {
         this.questions = questions;
         this.optionA = optionA;

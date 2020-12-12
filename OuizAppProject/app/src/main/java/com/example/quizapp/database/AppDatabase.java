@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 public abstract class AppDatabase extends RoomDatabase {
     public abstract QuestionsDao questionsDao();
     private static AppDatabase INSTANCE;
-    private static synchronized AppDatabase getInstance(final Context context) {
+    public static synchronized AppDatabase getInstance(final Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                     AppDatabase.class, "questionsDB").fallbackToDestructiveMigration()
@@ -28,6 +28,7 @@ public abstract class AppDatabase extends RoomDatabase {
             new PopulateDbAsyncTask(INSTANCE).execute();
         }
     };
+
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private QuestionsDao questionsDao;
         private PopulateDbAsyncTask(AppDatabase database) {
@@ -35,7 +36,9 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            questionsDao.insert(new Questions())
+            questionsDao.insert(new Questions("What are the languages used to code in Android studio",
+                    "Html and Css", "Php and Ruby", "Java and Kotlin",
+                    "Python and JavaScript", 3));
             return null;
         }
     }
