@@ -36,6 +36,9 @@ public class QuizMainActivity extends AppCompatActivity {
     boolean answered = false;
     List<Questions> questionsList;
     Questions currentQues;
+    int wrongAnswer = 0;
+    int correctAnswer = 0;
+    private int score = 0;
     private int questionCounter = 0, questionsTotalCount;
     private ColorStateList tvColorButton;
     private Handler handler = new Handler();
@@ -133,6 +136,11 @@ public class QuizMainActivity extends AppCompatActivity {
                 if (currentQues.getAnswer() == answerSelected) {
                     optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
                     optionOne.setTextColor(Color.WHITE);
+                    correctAnswer++;
+                    mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
+                    score += 10;
+                    mTvQuestionsScore.setText("Score: " + String.valueOf(score));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -143,6 +151,9 @@ public class QuizMainActivity extends AppCompatActivity {
 
                 } else {
                     changeToIncorrectColor(radioBtnSelected);
+                    wrongAnswer++;
+                    mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -156,6 +167,11 @@ public class QuizMainActivity extends AppCompatActivity {
                 if (currentQues.getAnswer() == answerSelected) {
                     optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
                     optionTwo.setTextColor(Color.WHITE);
+                    correctAnswer++;
+                    mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
+                    score += 10;
+                    mTvQuestionsScore.setText("Score: " + String.valueOf(score));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -165,6 +181,9 @@ public class QuizMainActivity extends AppCompatActivity {
 
                 } else {
                     changeToIncorrectColor(radioBtnSelected);
+                    wrongAnswer++;
+                    mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -177,6 +196,11 @@ public class QuizMainActivity extends AppCompatActivity {
                 if (currentQues.getAnswer() == answerSelected) {
                     optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
                     optionThree.setTextColor(Color.WHITE);
+                    correctAnswer++;
+                    mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
+                    score += 10;
+                    mTvQuestionsScore.setText("Score: " + String.valueOf(score));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -186,6 +210,9 @@ public class QuizMainActivity extends AppCompatActivity {
 
                 } else {
                     changeToIncorrectColor(radioBtnSelected);
+                    wrongAnswer++;
+                    mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -198,6 +225,11 @@ public class QuizMainActivity extends AppCompatActivity {
                 if (currentQues.getAnswer() == answerSelected) {
                     optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
                     optionFour.setTextColor(Color.WHITE);
+                    correctAnswer++;
+                    mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
+                    score += 10;
+                    mTvQuestionsScore.setText("Score: " + String.valueOf(score));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -207,6 +239,9 @@ public class QuizMainActivity extends AppCompatActivity {
 
                 } else {
                     changeToIncorrectColor(radioBtnSelected);
+                    wrongAnswer++;
+                    mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
