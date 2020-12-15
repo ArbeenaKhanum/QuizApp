@@ -1,13 +1,10 @@
 package com.example.quizapp.activities;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -16,13 +13,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.quizapp.CorrectScoreDialog;
-import com.example.quizapp.FinalScoreDialog;
+import com.example.quizapp.audioclass.AudioForAnswers;
+import com.example.quizapp.dialogs.CorrectScoreDialog;
+import com.example.quizapp.dialogs.FinalScoreDialog;
 import com.example.quizapp.R;
-import com.example.quizapp.WrongScoreDialog;
+import com.example.quizapp.dialogs.WrongScoreDialog;
 import com.example.quizapp.database.Questions;
 import com.example.quizapp.viewmodel.QuestionsViewModel;
 
@@ -49,6 +46,8 @@ public class QuizMainActivity extends AppCompatActivity {
     private WrongScoreDialog wrongScoreDialog;
     private CorrectScoreDialog correctScoreDialog;
     private int totalSizeOfQuizQuestions;
+    private int FLAG = 0;
+    private AudioForAnswers audioForAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +58,7 @@ public class QuizMainActivity extends AppCompatActivity {
         finalScoreDialog = new FinalScoreDialog(this);
         wrongScoreDialog = new WrongScoreDialog(this);
         correctScoreDialog = new CorrectScoreDialog(this);
+        audioForAnswers = new AudioForAnswers(this);
 
         questionsViewModel = ViewModelProviders.of(this).get(QuestionsViewModel.class);
         questionsViewModel.getAllQuestions().observe(this, new Observer<List<Questions>>() {
@@ -152,6 +152,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
                     correctScoreDialog.correctScoreDialog(score);
+                    FLAG = 1;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -167,6 +169,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
                     final String correctAnswer = (String) optionOne.getText();
                     wrongScoreDialog.wrongScoreDialog(correctAnswer);
+                    FLAG = 2;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -187,6 +191,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
                     correctScoreDialog.correctScoreDialog(score);
+                    FLAG = 1;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -201,6 +207,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
                     final String correctAnswer = (String) optionTwo.getText();
                     wrongScoreDialog.wrongScoreDialog(correctAnswer);
+                    FLAG = 2;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -220,6 +228,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
                     correctScoreDialog.correctScoreDialog(score);
+                    FLAG = 1;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -234,6 +244,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
                     final String correctAnswer = (String) optionThree.getText();
                     wrongScoreDialog.wrongScoreDialog(correctAnswer);
+                    FLAG = 2;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -253,6 +265,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
                     correctScoreDialog.correctScoreDialog(score);
+                    FLAG = 1;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -267,6 +281,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
                     final String correctAnswer = (String) optionFour.getText();
                     wrongScoreDialog.wrongScoreDialog(correctAnswer);
+                    FLAG = 2;
+                    audioForAnswers.setAudio(FLAG);
 
                     handler.postDelayed(new Runnable() {
                         @Override
