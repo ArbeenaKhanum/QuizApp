@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:text="Your Final Score"
             android:textColor="@color/white"
-            android:textSize="26sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -37,7 +37,7 @@
         android:paddingBottom="10dp"
         android:text="Final Score: "
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button
@@ -50,7 +50,7 @@
         android:padding="8dp"
         android:text="OK"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </LinearLayout>

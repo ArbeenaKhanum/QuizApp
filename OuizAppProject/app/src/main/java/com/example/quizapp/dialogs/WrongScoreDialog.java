@@ -25,7 +25,7 @@ public class WrongScoreDialog {
         wrongScoreDialog = new Dialog(mContext);
         wrongScoreDialog.setContentView(R.layout.wrong_dialog);
         tvWrongScore = wrongScoreDialog.findViewById(R.id.tvCorrectAnswerDialog);
-        tvWrongScore.setText("Correct Answer" + correctAnswer);
+        tvWrongScore.setText("Correct Answer: " + correctAnswer);
 
         final Button btnFinalScore = wrongScoreDialog.findViewById(R.id.ibWrongDialog);
         btnFinalScore.setOnClickListener(new View.OnClickListener() {
