@@ -19,7 +19,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.quizapp.CorrectScoreDialog;
+import com.example.quizapp.FinalScoreDialog;
 import com.example.quizapp.R;
+import com.example.quizapp.WrongScoreDialog;
 import com.example.quizapp.database.Questions;
 import com.example.quizapp.viewmodel.QuestionsViewModel;
 
@@ -42,6 +45,10 @@ public class QuizMainActivity extends AppCompatActivity {
     private int questionCounter = 0, questionsTotalCount;
     private ColorStateList tvColorButton;
     private Handler handler = new Handler();
+    private FinalScoreDialog finalScoreDialog;
+    private WrongScoreDialog wrongScoreDialog;
+    private CorrectScoreDialog correctScoreDialog;
+    private int totalSizeOfQuizQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,9 @@ public class QuizMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_quiz);
         initViews();
         tvColorButton = optionOne.getTextColors();
+        finalScoreDialog = new FinalScoreDialog(this);
+        wrongScoreDialog = new WrongScoreDialog(this);
+        correctScoreDialog = new CorrectScoreDialog(this);
 
         questionsViewModel = ViewModelProviders.of(this).get(QuestionsViewModel.class);
         questionsViewModel.getAllQuestions().observe(this, new Observer<List<Questions>>() {
@@ -141,6 +151,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     score += 10;
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
+                    correctScoreDialog.correctScoreDialog(score);
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -153,6 +165,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     changeToIncorrectColor(radioBtnSelected);
                     wrongAnswer++;
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+                    final String correctAnswer = (String) optionOne.getText();
+                    wrongScoreDialog.wrongScoreDialog(correctAnswer);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -172,6 +186,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     score += 10;
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
+                    correctScoreDialog.correctScoreDialog(score);
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -183,6 +199,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     changeToIncorrectColor(radioBtnSelected);
                     wrongAnswer++;
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+                    final String correctAnswer = (String) optionTwo.getText();
+                    wrongScoreDialog.wrongScoreDialog(correctAnswer);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -201,6 +219,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     score += 10;
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
+                    correctScoreDialog.correctScoreDialog(score);
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -212,6 +232,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     changeToIncorrectColor(radioBtnSelected);
                     wrongAnswer++;
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+                    final String correctAnswer = (String) optionThree.getText();
+                    wrongScoreDialog.wrongScoreDialog(correctAnswer);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -230,6 +252,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     score += 10;
                     mTvQuestionsScore.setText("Score: " + String.valueOf(score));
 
+                    correctScoreDialog.correctScoreDialog(score);
+
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -241,6 +265,8 @@ public class QuizMainActivity extends AppCompatActivity {
                     changeToIncorrectColor(radioBtnSelected);
                     wrongAnswer++;
                     mTvQuestionsWrong.setText("Wrong: " + String.valueOf(wrongAnswer));
+                    final String correctAnswer = (String) optionFour.getText();
+                    wrongScoreDialog.wrongScoreDialog(correctAnswer);
 
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -293,8 +319,14 @@ public class QuizMainActivity extends AppCompatActivity {
 
         } else {
             Toast.makeText(this, "Quiz Over", Toast.LENGTH_SHORT).show();
-            Intent restartQuizIntent = new Intent(getApplicationContext(), QuizMainActivity.class);
-            startActivity(restartQuizIntent);
+            totalSizeOfQuizQuestions = questionsList.size();
+
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finalScoreDialog.finalScoreDialog(correctAnswer, wrongAnswer, totalSizeOfQuizQuestions);
+                }
+            }, 2000);
         }
 
     }
