@@ -1,8 +1,10 @@
 package com.example.quizapp.activities;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.RadioButton;
@@ -25,6 +27,7 @@ import com.example.quizapp.viewmodel.QuestionsViewModel;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class QuizMainActivity extends AppCompatActivity {
 
@@ -48,6 +51,9 @@ public class QuizMainActivity extends AppCompatActivity {
     private int totalSizeOfQuizQuestions;
     private int FLAG = 0;
     private AudioForAnswers audioForAnswers;
+    private static final long COUNTDOWNTIME = 30000;
+    private CountDownTimer countDownTimer;
+    private long timeRemaining;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +139,7 @@ public class QuizMainActivity extends AppCompatActivity {
 
     private void quizOperations() {
         answered = true;
+        countDownTimer.cancel();
 
         RadioButton radioBtnSelected = findViewById(rbGroup.getCheckedRadioButtonId());
         int answerSelected = rbGroup.indexOfChild(radioBtnSelected) + 1;
@@ -332,6 +339,8 @@ public class QuizMainActivity extends AppCompatActivity {
             answered = false;
             mTvSubmit.setText("Submit Answer");
             mTvQuestionsCount.setText("Questions:" + questionCounter + "/" + (questionsTotalCount - 1));
+            timeRemaining = COUNTDOWNTIME;
+            startCountDownTimer();
 
         } else {
             Toast.makeText(this, "Quiz Over", Toast.LENGTH_SHORT).show();
@@ -340,10 +349,76 @@ public class QuizMainActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    finalScoreDialog.finalScoreDialog(correctAnswer, wrongAnswer, totalSizeOfQuizQuestions);
+                    resultDataOfQuiz();
                 }
             }, 2000);
         }
+    }
+
+    /**
+     * Countdown timer method
+     */
+
+    private void startCountDownTimer() {
+        countDownTimer = new CountDownTimer(timeRemaining, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeRemaining = millisUntilFinished;
+                updateCountDownTimer();
+            }
+
+            @Override
+            public void onFinish() {
+                timeRemaining = 0;
+                updateCountDownTimer();
+            }
+        }.start();
+    }
+
+    private void updateCountDownTimer() {
+        int minutes = (int) ((timeRemaining / 1000) / 60);
+        int seconds = (int) ((timeRemaining / 1000) % 60);
+
+        String timeFormat = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        mTvQuestionsTimer.setText(timeFormat);
+
+        if (timeRemaining < 1000) {
+            mTvQuestionsTimer.setTextColor(Color.RED);
+            FLAG = 3;
+            audioForAnswers.setAudio(FLAG);
+
+        } else {
+            mTvQuestionsTimer.setTextColor(getResources().getColor(R.color.default_text_color));
+        }
+
+        if (timeRemaining == 0) {
+            Toast.makeText(this, "Times Up!!", Toast.LENGTH_SHORT).show();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(getApplicationContext(), QuizMainActivity.class);
+                    startActivity(intent);
+                }
+            }, 2000);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+    }
+
+    private void resultDataOfQuiz() {
+        Intent resultIntent = new Intent(QuizMainActivity.this, QuizResultActivity.class);
+        resultIntent.putExtra("QuizScore", score);
+        resultIntent.putExtra("TotalQuizQues", (questionsTotalCount - 1));
+        resultIntent.putExtra("CorrectQues", correctAnswer);
+        resultIntent.putExtra("WrongQues", wrongAnswer);
+        startActivity(resultIntent);
 
     }
 

@@ -23,6 +23,10 @@ public class AudioForAnswers {
                 int wrongAnswerAudio = R.raw.quiz_wrong_answer;
                 playAudio(wrongAnswerAudio);
                 break;
+            case 3:
+                int timerCountdownAudio = R.raw.countdown_timer;
+                playAudio(timerCountdownAudio);
+                break;
         }
     }
 
