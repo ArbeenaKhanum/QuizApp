@@ -1,4 +1,4 @@
-package com.example.quizapp;
+package com.example.quizapp.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.quizapp.R;
 import com.example.quizapp.activities.QuizMainActivity;
 
 public class WrongScoreDialog {
