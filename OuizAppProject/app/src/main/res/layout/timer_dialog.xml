@@ -8,17 +8,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#762BF6"
+        android:background="#FF9800"
         android:orientation="vertical"
         android:paddingTop="20dp"
         android:paddingBottom="20dp">
 
         <TextView
-            android:id="@+id/tvFinalScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Your Final Score"
+            android:text="Times Up!"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -26,7 +25,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvFinalScoreDialog"
+        android:id="@+id/tvTimerDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -35,18 +34,18 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
-        android:text="Final Score: "
+        android:text="Quiz Over"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/ibFinalDialog"
+        android:id="@+id/ibTimerDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#762BF6"
+        android:backgroundTint="#FF9800"
         android:padding="8dp"
         android:text="OK"
         android:textColor="@color/white"
