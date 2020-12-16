@@ -15,13 +15,14 @@ public class CorrectScoreDialog {
     private Context mContext;
     private Dialog correctScoreDialog;
     private TextView tvCorrectScore;
-
+    private QuizMainActivity quizMainActivity;
 
     public CorrectScoreDialog(Context context) {
         mContext = context;
     }
 
-    public void correctScoreDialog(int totalScore) {
+    public void correctScoreDialog(int totalScore, QuizMainActivity quizMainActivity) {
+        this.quizMainActivity = quizMainActivity;
         correctScoreDialog = new Dialog(mContext);
         correctScoreDialog.setContentView(R.layout.correct_dialog);
 
@@ -31,6 +32,7 @@ public class CorrectScoreDialog {
             @Override
             public void onClick(View v) {
                 correctScoreDialog.dismiss();
+                quizMainActivity.setQuestions();
             }
         });
 

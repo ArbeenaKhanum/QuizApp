@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Correct: 10"
+            android:text="Correct: 0"
             android:textColor="#025305"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Wrong: 10"
+            android:text="Wrong: 0"
             android:textColor="#8F0735"
             android:textSize="18sp"
             android:textStyle="bold" />
