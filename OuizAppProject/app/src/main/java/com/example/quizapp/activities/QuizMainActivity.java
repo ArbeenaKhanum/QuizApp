@@ -280,12 +280,12 @@ public class QuizMainActivity extends AppCompatActivity {
             optionThree.setText(currentQues.getOptionC());
             optionFour.setText(currentQues.getOptionD());
             questionCounter++;
+            timeRemaining = COUNTDOWNTIME;
+            startCountDownTimer();
 
             answered = false;
             mTvSubmit.setText("Submit Answer");
             mTvQuestionsCount.setText("Questions:" + questionCounter + "/" + (questionsTotalCount - 1));
-            timeRemaining = COUNTDOWNTIME;
-            startCountDownTimer();
 
         } else {
             Toast.makeText(this, "Quiz Over", Toast.LENGTH_SHORT).show();
@@ -311,7 +311,7 @@ public class QuizMainActivity extends AppCompatActivity {
      */
 
     private void startCountDownTimer() {
-        countDownTimer = new CountDownTimer(timeRemaining, 1000) {
+        countDownTimer = new CountDownTimer(COUNTDOWNTIME, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeRemaining = millisUntilFinished;
