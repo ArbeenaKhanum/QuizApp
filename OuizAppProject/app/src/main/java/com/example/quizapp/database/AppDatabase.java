@@ -103,6 +103,18 @@ public abstract class AppDatabase extends RoomDatabase {
                     "Broadcast Receiver", "Content Provider", "Intent",
                     "None of these", 2));
 
+            questionsDao.insert(new Questions("Factors of 9 are ...",
+                    "1, 3 and 9", "1, 2 and 3", "1, 6 and 9",
+                    "1, 2, 3 and 9", 1));
+
+            questionsDao.insert(new Questions("Which vitamin is necessary for blood clotting?",
+                    "Vitamin A", "Vitamin C", "Vitamin K",
+                    "Vitamin D", 3));
+
+            questionsDao.insert(new Questions("View Pager is used for?",
+                    "Swapping Activities", "Swapping Fragments", "Paging Down List Items",
+                    "Scrolling views", 2));
+
             questionsDao.insert(new Questions("What is 50 times 5 is equal to?",
                     "2500", "505", "500",
                     "250", 4));
