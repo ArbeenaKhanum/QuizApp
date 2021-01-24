@@ -1,6 +1,11 @@
 # Quiz App
+###### Quiz application provides multiple choice questions with option to select the correct answer.
 
-Quiz App Features:
+## Tech Stacks Used
+* Java
+* Room database
+
+## Features
 
 * The Quiz application can generate random questions and generate choices to be answered.
 * The user can select the answer among the generated choices.
