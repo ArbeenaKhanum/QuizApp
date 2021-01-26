@@ -1,0 +1,120 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Quiz App\r\n###### Quiz application provides multiple choice questions with option to select the correct answer.\r\n\r\n## Tech Stacks Used\r\n* Java\r\n* Room database\r\n\r\n## Features\r\n\r\n* The Quiz application can generate random questions and generate choices to be answered.\r\n* The user can select the answer among the generated choices.\r\n* When correct answer is selected, the user earns 10 points.\r\n* When wrong answwer is selected, the score remains same and correct answer is displayed.\r\n* After the quiz is complete, The score board with the total score, the number of correct and wrong answers is displayed.\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- README.md	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ README.md	(date 1611503725455)
+@@ -10,5 +10,5 @@
+ * The Quiz application can generate random questions and generate choices to be answered.
+ * The user can select the answer among the generated choices.
+ * When correct answer is selected, the user earns 10 points.
+-* When wrong answwer is selected, the score remains same and correct answer is displayed.
++* When wrong answer is selected, the score remains same and correct answer is displayed.
+ * After the quiz is complete, The score board with the total score, the number of correct and wrong answers is displayed.
+Index: OuizAppProject/app/src/main/res/anim/transitions_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<alpha xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:fromAlpha=\"0.0\"\r\n    android:duration=\"2000\"\r\n    android:toAlpha=\"1.0\">\r\n\r\n\r\n</alpha>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/res/anim/transitions_splash.xml	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/res/anim/transitions_splash.xml	(date 1609769873480)
+@@ -3,6 +3,4 @@
+     android:fromAlpha="0.0"
+     android:duration="2000"
+     android:toAlpha="1.0">
+-
+-
+ </alpha>
+\ No newline at end of file
+Index: OuizAppProject/app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.QuizApp\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/purple_500</item>\r\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\r\n        <item name=\"colorOnPrimary\">@color/white</item>\r\n        <!-- Secondary brand color. -->\r\n        <item name=\"colorSecondary\">@color/teal_200</item>\r\n        <item name=\"colorSecondaryVariant\">@color/teal_700</item>\r\n        <item name=\"colorOnSecondary\">@color/black</item>\r\n        <!-- Status bar color. -->\r\n        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/res/values/themes.xml	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/res/values/themes.xml	(date 1611058563668)
+@@ -1,6 +1,6 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         <!-- Primary brand color. -->
+         <item name="colorPrimary">@color/purple_500</item>
+         <item name="colorPrimaryVariant">@color/purple_700</item>
+Index: OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1611058554881)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@color/ic_launcher_background"/>
++    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: OuizAppProject/app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.QuizApp\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/purple_200</item>\r\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\r\n        <item name=\"colorOnPrimary\">@color/black</item>\r\n        <!-- Secondary brand color. -->\r\n        <item name=\"colorSecondary\">@color/teal_200</item>\r\n        <item name=\"colorSecondaryVariant\">@color/teal_200</item>\r\n        <item name=\"colorOnSecondary\">@color/black</item>\r\n        <!-- Status bar color. -->\r\n        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/res/values-night/themes.xml	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/res/values-night/themes.xml	(date 1611058563802)
+@@ -1,6 +1,6 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         <!-- Primary brand color. -->
+         <item name="colorPrimary">@color/purple_200</item>
+         <item name="colorPrimaryVariant">@color/purple_700</item>
+Index: OuizAppProject/app/src/main/java/com/example/quizapp/activities/SplashActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.quizapp.activities;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.view.animation.Animation;\r\nimport android.view.animation.AnimationUtils;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport com.example.quizapp.R;\r\n\r\npublic class SplashActivity extends AppCompatActivity {\r\n    ImageView ivQuizLogo;\r\n    TextView tvQuizName;\r\n    Handler handler;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_splash);\r\n\r\n        Runnable runnable = new Runnable() {\r\n            @Override\r\n            public void run() {\r\n                Intent splashIntent = new Intent(SplashActivity.this, QuizStartScreenActivity.class);\r\n                startActivity(splashIntent);\r\n                finish();\r\n            }\r\n        };\r\n\r\n        Handler mHandler = new Handler();\r\n        mHandler.postDelayed(runnable, 3000);\r\n\r\n\r\n        initViews();\r\n    }\r\n\r\n    private void initViews() {\r\n        ivQuizLogo = findViewById(R.id.ivQuizLogo);\r\n        tvQuizName = findViewById(R.id.QuizName);\r\n\r\n        animationsOnSplash();\r\n    }\r\n\r\n    private void animationsOnSplash() {\r\n        Animation animation = AnimationUtils.loadAnimation(this, R.anim.transitions_splash);\r\n        ivQuizLogo.setAnimation(animation);\r\n        tvQuizName.startAnimation(animation);\r\n    }\r\n\r\n    @Override\r\n    protected void onStop() {\r\n        super.onStop();\r\n        finish();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/java/com/example/quizapp/activities/SplashActivity.java	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/java/com/example/quizapp/activities/SplashActivity.java	(date 1609769873361)
+@@ -15,7 +15,6 @@
+ public class SplashActivity extends AppCompatActivity {
+     ImageView ivQuizLogo;
+     TextView tvQuizName;
+-    Handler handler;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+Index: OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(revision 32c884be0e8fa2641d1a3acbbdea29ce97fd255a)
++++ OuizAppProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1611058555009)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@color/ic_launcher_background"/>
++    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
