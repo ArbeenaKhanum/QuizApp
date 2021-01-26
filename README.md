@@ -1,7 +1,7 @@
 # Quiz App
 ###### Quiz application provides multiple choice questions with option to select the correct answer.
 
-## Tech Stacks Used
+## Technologies
 * Java
 * Room database
 
