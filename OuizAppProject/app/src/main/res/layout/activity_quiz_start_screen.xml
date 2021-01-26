@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4798F8"
     android:gravity="center"
+    android:background="#EFC484"
     android:orientation="vertical"
     tools:context=".activities.QuizStartScreenActivity">
 
@@ -57,7 +57,7 @@
             android:contextClickable="true"
             android:padding="15dp"
             android:elevation="8dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:src="@drawable/start_quiz_sml"
             android:text="Start Quiz"
             android:textAlignment="center"

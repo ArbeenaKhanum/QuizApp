@@ -65,7 +65,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
             questionsDao.insert(new Questions("In Activity life-cycle, what is the first callback method invoked by the system?",
                     "onStart()", "onStop()", "onRestore()",
-                    "onCreate", 4));
+                    "onCreate()", 4));
 
             questionsDao.insert(new Questions("Which is the only even prime number?",
                     "2", "5", "6",

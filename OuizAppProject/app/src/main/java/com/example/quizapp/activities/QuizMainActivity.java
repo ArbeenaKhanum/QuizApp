@@ -93,31 +93,31 @@ public class QuizMainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rbOptionOne:
-                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_answers_options));
-                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
+                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_option_a));
+                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_b));
+                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_c));
+                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_d));
                         break;
 
                     case R.id.rbOptionTwo:
-                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_answers_options));
-                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
+                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_option_b));
+                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_a));
+                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_c));
+                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_d));
                         break;
 
                     case R.id.rbOptionThree:
-                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_answers_options));
-                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
+                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_option_c));
+                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_b));
+                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_a));
+                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_d));
                         break;
 
                     case R.id.rbOptionFour:
-                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_answers_options));
-                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
+                        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected_option_d));
+                        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_b));
+                        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_c));
+                        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_a));
                         break;
                 }
 
@@ -152,7 +152,7 @@ public class QuizMainActivity extends AppCompatActivity {
         switch (currentQues.getAnswer()) {
             case 1:
                 if (currentQues.getAnswer() == answerSelected) {
-                    optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
+                    optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     optionOne.setTextColor(Color.WHITE);
                     correctAnswer++;
                     mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
@@ -177,7 +177,7 @@ public class QuizMainActivity extends AppCompatActivity {
 
             case 2:
                 if (currentQues.getAnswer() == answerSelected) {
-                    optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
+                    optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     optionTwo.setTextColor(Color.WHITE);
                     correctAnswer++;
                     mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
@@ -200,7 +200,7 @@ public class QuizMainActivity extends AppCompatActivity {
                 break;
             case 3:
                 if (currentQues.getAnswer() == answerSelected) {
-                    optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
+                    optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     optionThree.setTextColor(Color.WHITE);
                     correctAnswer++;
                     mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
@@ -223,7 +223,7 @@ public class QuizMainActivity extends AppCompatActivity {
                 break;
             case 4:
                 if (currentQues.getAnswer() == answerSelected) {
-                    optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_correct_selected));
+                    optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_correct));
                     optionFour.setTextColor(Color.WHITE);
                     correctAnswer++;
                     mTvQuestionsCorrect.setText("Correct: " + String.valueOf(correctAnswer));
@@ -253,16 +253,16 @@ public class QuizMainActivity extends AppCompatActivity {
 
     private void changeToIncorrectColor(RadioButton radioBtnSelected) {
         radioBtnSelected.setTextColor(Color.WHITE);
-        radioBtnSelected.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.answer_wrong_selected));
+        radioBtnSelected.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_answer_wrong));
     }
 
     public void setQuestions() {
         rbGroup.clearCheck();
 
-        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
-        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_answers_options));
+        optionOne.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_a));
+        optionTwo.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_b));
+        optionThree.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_c));
+        optionFour.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.default_option_d));
 
         optionOne.setTextColor(getResources().getColor(R.color.default_text_color));
         optionTwo.setTextColor(getResources().getColor(R.color.default_text_color));
@@ -280,16 +280,16 @@ public class QuizMainActivity extends AppCompatActivity {
             optionThree.setText(currentQues.getOptionC());
             optionFour.setText(currentQues.getOptionD());
             questionCounter++;
-            timeRemaining = COUNTDOWNTIME;
-            startCountDownTimer();
 
             answered = false;
             mTvSubmit.setText("Submit Answer");
             mTvQuestionsCount.setText("Questions:" + questionCounter + "/" + (questionsTotalCount - 1));
 
+            timeRemaining = COUNTDOWNTIME;
+            startCountDownTimer();
         } else {
             Toast.makeText(this, "Quiz Over", Toast.LENGTH_SHORT).show();
-            totalSizeOfQuizQuestions = questionsList.size();
+//            totalSizeOfQuizQuestions = questionsList.size();
 
             optionOne.setClickable(false);
             optionTwo.setClickable(false);
@@ -311,7 +311,7 @@ public class QuizMainActivity extends AppCompatActivity {
      */
 
     private void startCountDownTimer() {
-        countDownTimer = new CountDownTimer(COUNTDOWNTIME, 1000) {
+        countDownTimer = new CountDownTimer(timeRemaining, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeRemaining = millisUntilFinished;
@@ -339,7 +339,7 @@ public class QuizMainActivity extends AppCompatActivity {
             audioForAnswers.setAudio(FLAG);
 
         } else {
-            mTvQuestionsTimer.setTextColor(getResources().getColor(R.color.default_text_color));
+            mTvQuestionsTimer.setTextColor(getResources().getColor(R.color.timer_text));
         }
 
         if (timeRemaining == 0) {

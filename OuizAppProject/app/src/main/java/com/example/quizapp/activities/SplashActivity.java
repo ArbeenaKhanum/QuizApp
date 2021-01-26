@@ -15,7 +15,6 @@ import com.example.quizapp.R;
 public class SplashActivity extends AppCompatActivity {
     ImageView ivQuizLogo;
     TextView tvQuizName;
-    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
